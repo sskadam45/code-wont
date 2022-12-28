@@ -17,7 +17,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ExploreComponent } from './explore/explore.component';
-import { AngularSplitModule } from 'angular-split';
 
 @NgModule({
   declarations: [
@@ -40,8 +39,7 @@ import { AngularSplitModule } from 'angular-split';
     CarouselModule.forRoot(),
     FormsModule,
     CommonModule,
-    HttpClientModule,
-    AngularSplitModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
