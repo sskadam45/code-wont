@@ -5,24 +5,34 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor03" [ngbCollapse]="isCollapsed">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" routerLink="explore" *ngIf="isLoggedIn">Explore</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn" routerLinkActive="active">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" *ngIf="isLoggedIn">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
   </div>
 </nav>
 <router-outlet></router-outlet>
