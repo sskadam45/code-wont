@@ -1,0 +1,37 @@
+<button class="btn btn-outline-primary mb-2 me-2" (click)="openLg(content)">Add new Topic</button>
+
+
+<div *ngFor="let item of topics">
+    <app-topic [data]="item"></app-topic>
+
+</div>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Modal title</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form (ngSubmit)="onSubmit(topicForm.value)" #topicForm="ngForm">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Topic Name</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" 
+              aria-describedby="emailHelp" 
+              placeholder="Enter topic name" [(ngModel)]="topic.title" name="title"
+              #title="ngModel">
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Tags</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="tags" [(ngModel)]="tags" name="tags"
+              #tag="ngModel">
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+

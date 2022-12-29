@@ -1,3 +1,4 @@
+import { ProblemDetailsComponent } from './problem-details/problem-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExploreComponent } from './explore/explore.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'explore', component: ExploreComponent },
+  {path: 'problemDetails',  component: ProblemDetailsComponent},
   { path: 'error', component: PageNotFoundComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'error' }

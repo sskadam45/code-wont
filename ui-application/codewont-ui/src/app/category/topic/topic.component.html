@@ -1,0 +1,22 @@
+<ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+    <ngb-panel>
+        <!-- Topic Section -->
+        <ng-template ngbPanelHeader let-opened="opened" >
+                <button ngbPanelToggle  class="accordion-button">
+                    <div style="display: flex;">
+                        <span>{{data.title}}</span>
+                        <ul style="color: green;" *ngFor="let item of data.tags">
+                            <li>{{item}}</li>
+                        </ul>
+                    </div>
+                       
+                </button>
+        </ng-template>
+        <!-- Problems Section -->
+        <ng-template ngbPanelContent>
+            <div class="list-group">
+                <app-problem-list></app-problem-list>
+            </div>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

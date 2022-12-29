@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore.component.css']
 })
 export class ExploreComponent implements OnInit {
+	public isCollapsed = false;
+  disabled = false;
 
   constructor() { }
-
   ngOnInit(): void {
   }
 

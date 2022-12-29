@@ -14,6 +14,14 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { AngularSplitModule } from 'angular-split';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { ProblemListComponent } from './problems/problem-list/problem-list.component';
+import { ProblemComponent } from './problems/problem/problem.component';
+import { TopicListComponent } from './category/topic-list/topic-list.component';
+import { TopicComponent } from './category/topic/topic.component';
+import { ProblemDetailsComponent } from './problem-details/problem-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,14 @@ import { RegisterComponent } from './register/register.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    ExploreComponent
+    ExploreComponent,
+    FooterComponent,
+    NavbarComponent,
+    TopicListComponent,
+    TopicComponent,
+    ProblemListComponent,
+    ProblemComponent,
+    ProblemDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +48,8 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     NgbModule,
     FormsModule,
+    AngularSplitModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
